@@ -8,7 +8,7 @@ import { faFileDownload } from "@fortawesome/free-solid-svg-icons";
 function NavBar() {
     const scrollTo = (e) => {
         scroller.scrollTo(e.target.href.split('#')[1], {
-            duration: 800,
+            duration: 1000,
             delay: 0,
             smooth: "easeInOutQuart",
           });
@@ -20,26 +20,26 @@ function NavBar() {
             <Navbar.Brand href="/">
                 Muhammad Saad Mir
             </Navbar.Brand>
-            <div title="Link to Facebook Profile">
-                <Navbar.Brand href="https://www.facebook.com/M.SaAd.Miir/">
+            <div title="Facebook Profile">
+                <Navbar.Brand href="https://www.facebook.com/M.SaAd.Miir/" target="_blank">
                     <FontAwesomeIcon icon={faFacebookSquare} />
                 </Navbar.Brand>
             </div>
-            <div title="Link to LinkedIn Profile">
-                <Navbar.Brand href="https://www.linkedin.com/in/muhammad-saad-mir/">
+            <div title="LinkedIn Profile">
+                <Navbar.Brand href="https://www.linkedin.com/in/muhammad-saad-mir/" target="_blank">
                     <FontAwesomeIcon icon={faLinkedin} />
                 </Navbar.Brand>
             </div>
             <div title="Download Resume">
-                <Navbar.Brand href="/Muhammad_Saad_Mir_Resume.pdf">
+                <Navbar.Brand href="/Muhammad_Saad_Mir_Resume.pdf" target="_blank">
                     <FontAwesomeIcon icon={faFileDownload} />
                 </Navbar.Brand>
             </div>
 
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="ml-auto">
-                <Nav.Link onClick={scrollTo} id="homeComponent" href='#home'>Home</Nav.Link>
-                <Nav.Link onClick={scrollTo} id="aboutComponent" href='#about-me'>About Me</Nav.Link>
+                <Nav.Link onClick={scrollTo} href='#home'>Home</Nav.Link>
+                <Nav.Link onClick={scrollTo} href='#about-me'>About Me</Nav.Link>
                 <Nav.Link onClick={scrollTo} href='#my-projects'>Projects</Nav.Link>
                 <Nav.Link onClick={scrollTo} href='#contact-me'>Contact</Nav.Link>
                 </Nav>
