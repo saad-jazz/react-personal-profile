@@ -1,18 +1,19 @@
 import NavBar from './components/navbarComponent';
-import "bootstrap/dist/css/bootstrap.css";
-import './App.css';
 import FooterNavBar from './components/footerNavBar';
-import Top from './components/topComponent';
 import About from './components/aboutComponent';
 import Project from './components/projectComponent';
 import Contact from './components/contactComponent';
+import Intro from './components/introComponent';
+import "bootstrap/dist/css/bootstrap.css";
+import './App.css';
+
 
 
 function App() {
   return (
     <>
       <NavBar/>
-      <Top/>
+      <Intro/>
       <About/>
       <Project/>
       <Contact/>

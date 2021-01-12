@@ -1,4 +1,6 @@
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 function About() {
     return(
@@ -7,7 +9,15 @@ function About() {
                 <div className="row">
                     <div className="col-lg-12 custom-mid">
                         <h3>About Me</h3>
-                        <hr/>
+                        <div className="custom-star">
+                            <div className="custom-line-dark"/>
+                            <div className="icon">
+                                <i>
+                                    <FontAwesomeIcon icon={faStar}/>
+                                </i>
+                            </div>
+                            <div className="custom-line-dark"/>
+                        </div>
                     </div>
                 </div>
                 <div className="row custom-pad">

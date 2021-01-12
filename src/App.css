@@ -35,11 +35,39 @@
   margin-top: 55px;
 }
 
+.custom-star{
+  display: flex;
+  justify-content: center;
+}
+.custom-icon{
+  position: relative;
+}
+.custom-line-top{
+  width: 50vh;
+  position: relative;
+  margin: 15px;
+  border: 2px solid white;
+  border-radius: 5px;
+}
+.custom-line-dark{
+  width: 22vh;
+  position: relative;
+  margin: 15px;
+  border: 2px solid lightseagreen;
+  border-radius: 5px;
+}
+.custom-line-light{
+  width: 22vh;
+  position: relative;
+  margin: 15px;
+  border: 2px solid white;
+  border-radius: 5px;
+}
+
 .border {
   border: 10px solid #fff !important;
 }
 
 .white{
   color: #fff;
-
 }

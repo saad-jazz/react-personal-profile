@@ -1,12 +1,12 @@
 import React from "react";
 import { Navbar, Nav } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCopyright } from "@fortawesome/free-solid-svg-icons"
+import { faCopyright } from "@fortawesome/free-solid-svg-icons";
 
 function FooterNavBar() {
     return(
         <div>
-            <Navbar sticky="bottom" bg="dark" variant="dark">
+            <Navbar sticky="bottom" bg="dark" variant="dark" expand="md">
 
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="m-auto">
