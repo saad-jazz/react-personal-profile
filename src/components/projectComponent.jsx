@@ -20,7 +20,7 @@ function Project() {
                         </div>
                     </div>
                 </div>
-                <div className="row custom-pad">
+                <div className="row">
                     <div className="col-lg-3"></div>
                     <div className="col-lg-6">
                         <ul className="custom-color-white tester"> 

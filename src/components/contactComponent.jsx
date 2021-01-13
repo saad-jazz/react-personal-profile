@@ -1,35 +1,86 @@
-import React from "react";
+import React, { Component } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 
-function Contact() {
-    return(
-        <section id="contact-me">
-            <div className="container-fluid contactDiv">
-                <div className="row">
-                    <div className="col-lg-12 custom-mid">
-                        <h3 className="custom-color-blue">Contact</h3>
-                        <div className="custom-star">
-                            <div className="custom-line-dark"/>
-                            <div className="icon">
-                                <i>
-                                    <FontAwesomeIcon className="custom-color-blue" icon={faStar}/>
-                                </i>
+class Contact extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            name: '',
+            email: '',
+            msg:''
+        }
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleInputChange = this.handleInputChange.bind(this);
+    }
+
+    handleSubmit = e => {
+        e.preventDefault();
+        alert(this.state.name);
+        alert(this.state.email);
+        alert(this.state.msg);
+    }
+
+    handleInputChange = e => {
+        const target = e.target;
+        const value = target.type === 'checkbox' ? target.checked : target.value;
+        const name = target.name;
+
+        this.setState({ [name]: value });
+    }
+
+    render(){
+        return(
+            <section id="contact-me">
+                <div className="container-fluid contactDiv">
+                    <div className="row">
+                        <div className="col-lg-12 custom-mid">
+                            <h3 className="custom-color-blue">Contact</h3>
+                            <div className="custom-star">
+                                <div className="custom-line-dark"/>
+                                <div className="icon">
+                                    <i>
+                                        <FontAwesomeIcon className="custom-color-blue" icon={faStar}/>
+                                    </i>
+                                </div>
+                                <div className="custom-line-dark"/>
                             </div>
-                            <div className="custom-line-dark"/>
                         </div>
                     </div>
-                </div>
-                <div className="row custom-pad">
-                    <div className="col-lg-12">
-                        <p className="custom-color-blue">Cicero famously orated against his political opponent Lucius Sergius Catilina. Occasionally the first Oration against Catiline is taken for type specimens: Quo usque tandem abutere, Catilina, patientia nostra? Quam diu etiam furor iste tuus nos eludet? (How long, O Catiline, will you abuse our patience? And for how long will that madness of yours mock us? There's lot of hate out there for a text that amounts to little more than garbled words in an old language. The villagers are out there with a vengeance to get that Frankenstein, wielding torches and pitchforks, wanting to tar and feather it at the least, running it out of town in shame.</p>
-                        <p className="custom-color-blue">Lorem Ipsum actually is usefull in the design stage as it focuses our attention on places where the content is a dynamic block coming from the CMS (unlike static content elements that will always stay the same.) Blocks of Lorem Ipsum with a character count range provide a obvious reminder to check and re-check that the design and the content model match up.</p>
-                        <p className="custom-color-blue">Lorem Ipsum actually is usefull in the design stage as it focuses our attention on places where the content is a dynamic block coming from the CMS (unlike static content elements that will always stay the same.) Blocks of Lorem Ipsum with a character count range provide a obvious reminder to check and re-check that the design and the content model match up. There's lot of hate out there for a text that amounts to little more than garbled words in an old language. The villagers are out there with a vengeance to get that Frankenstein, wielding torches and pitchforks, wanting to tar and feather it at the least, running it out of town in shame.</p>
+                    <div className="row bottomDiv">
+                        <div className="col-md-3"></div>
+                        <div className="col-md-6">
+                            <form autoComplete="on" className="form" id="formContact" name="formContact" role="form" onSubmit={this.handleSubmit}>
+                                <div className="form-group row">
+                                    <label htmlFor="name" className="col-2 col-form-label">Name</label>
+                                    <div className="col-10">
+                                        <input autoComplete="name" className="form-control" name="name" id="name" required type="text" value={this.state.name} onChange={this.handleInputChange}/>
+                                    </div>
+                                </div>
+                                <div className="form-group row">
+                                    <label htmlFor="email" className="col-2 col-form-label">Email</label>
+                                    <div className="col-10">
+                                        <input autoComplete="email" className="form-control" name="email" id="email" required type="email" value={this.state.email} onChange={this.handleInputChange}/>
+                                    </div>
+                                </div>
+                                <div className="form-group row">
+                                    <label htmlFor="msg" className="col-2 col-form-label">Message</label>
+                                    <div className="col-10">
+                                        <textarea autoComplete="msg" rows="6" className="form-control" name="msg" id="msg" required type="textarea" value={this.state.msg} onChange={this.handleInputChange}/>
+                                    </div>
+                                </div>
+                                <div className="form-group">
+                                    <button className="btn btn-primary btn-m float-right" type="submit">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div className="col-md-3"></div>
                     </div>
                 </div>
-            </div>
-        </section>
-    );
+            </section>
+        );
+    }
+    
 }
 
 export default Contact;
