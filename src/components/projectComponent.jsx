@@ -21,14 +21,14 @@ function Project() {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-lg-3 col-md-3 col-xl-4"></div>
-                    <div className="col-lg-6 col-md-6 col-xl-8">
+                    <div className="col-md-3"></div>
+                    <div className="col-md-6">
                         <ul className="custom-color-white tester custom"> 
                             <li><b>Final Year Project: Centralized E-Portal for ICCI <i>(MERN Stack | Material UI).</i></b></li>
-                            <li>Artist Mgt. System; http://www.thenxtproduction.com <i>(Wordpress).</i></li>
-                            <li>Portfolio for PakTechX;https://www.paktechx.com <i>(Wordpress).</i></li>
-                            <li>Real Estate Web Sol.; http://www.afnanassociates.com <i>(Wordpress).</i></li> 
-                            <li>Doctors Mgt. System <i>(J2EE).</i></li>
+                            <li>Artist Management System; <a className="custom-color-white" target="_blank" href="http://www.thenxtproduction.com">The NXT Production</a> <i>(Wordpress).</i></li>
+                            <li>Portfolio for PakTechX; <a className="custom-color-white" target="_blank" href="https://www.paktechx.com">PakTechX</a> <i>(Wordpress).</i></li>
+                            <li>Real Estate Web Solution; <a className="custom-color-white" target="_blank" href="http://www.afnanassociates.com">Afnan Associates</a> <i>(Wordpress).</i></li> 
+                            <li>Doctors Management System <i>(J2EE).</i></li>
                             <li>Customized ERP Solution <i>(J2EE).</i></li>
                             <li>Automatic Number Plate Detection <i>(MATLAB/DIP).</i></li>
                             <li>Emotion Detection using Audio <i>(Python/ML).</i></li>
@@ -36,11 +36,11 @@ function Project() {
                             <li>Attendance System using QR/BarCode &amp; Biometrics <i>(C#).</i></li>
                             <li>E-Voting System using QR/BarCode &amp; Biometrics <i>(C#).</i></li>
                             <li>Inventory System, Pay Roll Slip &amp; Mini Compiler <i>(C#).</i></li>
-                            <li>Thai Walks Mgt. System <i>(C#).</i></li>
-                            <li>Grocery Store Mgt System <i>(C#).</i></li>
+                            <li>Thai Walks Management System <i>(C#).</i></li>
+                            <li>Grocery Store Management System <i>(C#).</i></li>
                             <li>Various Mgt. Systems involving File Handling &amp; Database <i>(C#, Java).</i></li>
                             <li>Music Player &amp; Calculator <i>(Android).</i></li>
-                            <li>Typing Master, Tic Tac Toe, Diary Mgt. System <i>(C++).</i></li>
+                            <li>Typing Master, Tic Tac Toe, Diary Management System <i>(C++).</i></li>
                         </ul>
                     </div>
                     <div className="col-lg-3"></div>
