@@ -2,7 +2,7 @@ import React from "react";
 import { Navbar, Nav } from 'react-bootstrap';
 import { scroller } from 'react-scroll';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebookSquare, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faLinkedin, faGithubSquare } from "@fortawesome/free-brands-svg-icons";
 import { faFileDownload } from "@fortawesome/free-solid-svg-icons";
 
 function NavBar() {
@@ -20,9 +20,9 @@ function NavBar() {
             <Navbar.Brand href="/">
                 Muhammad Saad Mir
             </Navbar.Brand>
-            <div title="Facebook Profile">
-                <Navbar.Brand href="https://www.facebook.com/M.SaAd.Miir/" target="_blank">
-                    <FontAwesomeIcon icon={faFacebookSquare} />
+            <div title="Github Profile">
+                <Navbar.Brand href="https://github.com/saadmir7/" target="_blank">
+                    <FontAwesomeIcon icon={faGithubSquare} />
                 </Navbar.Brand>
             </div>
             <div title="LinkedIn Profile">
