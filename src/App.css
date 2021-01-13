@@ -11,9 +11,9 @@
 
 .projectDiv{
   margin-top: 10px;
-  text-align: center;
   background-color: lightseagreen;
 }
+
 
 .aboutDiv{
   margin-top: 10px;
@@ -28,7 +28,8 @@
 }
 
 .custom-pad{
-  padding-left: 5%;
+  margin-left: 5%;
+  align-content: center;
 }
 
 .custom{

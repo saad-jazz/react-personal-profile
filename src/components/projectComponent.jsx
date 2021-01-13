@@ -21,16 +21,29 @@ function Project() {
                     </div>
                 </div>
                 <div className="row custom-pad">
-                    <div className="col-sm-6">
-                        <p className="custom-color-white">Cicero famously orated against his political opponent Lucius Sergius Catilina. Occasionally the first Oration against Catiline is taken for type specimens: Quo usque tandem abutere, Catilina, patientia nostra? Quam diu etiam furor iste tuus nos eludet? (How long, O Catiline, will you abuse our patience? And for how long will that madness of yours mock us?</p>
-                        <p className="custom-color-white">There's lot of hate out there for a text that amounts to little more than garbled words in an old language. The villagers are out there with a vengeance to get that Frankenstein, wielding torches and pitchforks, wanting to tar and feather it at the least, running it out of town in shame.</p>
-                        <p className="custom-color-white">Lorem Ipsum actually is usefull in the design stage as it focuses our attention on places where the content is a dynamic block coming from the CMS (unlike static content elements that will always stay the same.) Blocks of Lorem Ipsum with a character count range provide a obvious reminder to check and re-check that the design and the content model match up.</p>
+                    <div className="col-lg-3"></div>
+                    <div className="col-lg-6">
+                        <ul className="custom-color-white tester"> 
+                            <li><b>Final Year Project: Centralized E-Portal for ICCI <i>(MERN Stack | Material UI).</i></b></li>
+                            <li>Artist Mgt. System; http://www.thenxtproduction.com <i>(Wordpress).</i></li>
+                            <li>Portfolio for PakTechX;https://www.paktechx.com <i>(Wordpress).</i></li>
+                            <li>Real Estate Web Sol.; http://www.afnanassociates.com <i>(Wordpress).</i></li> 
+                            <li>Doctors Mgt. System <i>(J2EE).</i></li>
+                            <li>Customized ERP Solution <i>(J2EE).</i></li>
+                            <li>Automatic Number Plate Detection <i>(MATLAB/DIP).</i></li>
+                            <li>Emotion Detection using Audio <i>(Python/ML).</i></li>
+                            <li>Voice Recognition <i>(Python/ML).</i></li>
+                            <li>Attendance System using QR/BarCode &amp; Biometrics <i>(C#).</i></li>
+                            <li>E-Voting System using QR/BarCode &amp; Biometrics <i>(C#).</i></li>
+                            <li>Inventory System, Pay Roll Slip &amp; Mini Compiler <i>(C#).</i></li>
+                            <li>Thai Walks Mgt. System <i>(C#).</i></li>
+                            <li>Grocery Store Mgt System <i>(C#).</i></li>
+                            <li>Various Mgt. Systems involving File Handling &amp; Database <i>(C#, Java).</i></li>
+                            <li>Music Player &amp; Calculator <i>(Android).</i></li>
+                            <li>Typing Master, Tic Tac Toe, Diary Mgt. System <i>(C++).</i></li>
+                        </ul>
                     </div>
-                    <div className="col-sm-6">
-                        <p className="custom-color-white">Cicero famously orated against his political opponent Lucius Sergius Catilina. Occasionally the first Oration against Catiline is taken for type specimens: Quo usque tandem abutere, Catilina, patientia nostra? Quam diu etiam furor iste tuus nos eludet? (How long, O Catiline, will you abuse our patience? And for how long will that madness of yours mock us?</p>
-                        <p className="custom-color-white">There's lot of hate out there for a text that amounts to little more than garbled words in an old language. The villagers are out there with a vengeance to get that Frankenstein, wielding torches and pitchforks, wanting to tar and feather it at the least, running it out of town in shame.</p>
-                        <p className="custom-color-white">Lorem Ipsum actually is usefull in the design stage as it focuses our attention on places where the content is a dynamic block coming from the CMS (unlike static content elements that will always stay the same.) Blocks of Lorem Ipsum with a character count range provide a obvious reminder to check and re-check that the design and the content model match up.</p>
-                    </div>
+                    <div className="col-lg-3"></div>
                 </div>
             </div>
         </section>
