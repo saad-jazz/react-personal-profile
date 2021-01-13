@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { GoogleSpreadsheet } from "google-spreadsheet";
 
 class Contact extends Component {
     constructor(props){
@@ -8,17 +9,44 @@ class Contact extends Component {
         this.state = {
             name: '',
             email: '',
-            msg:''
+            msg:'',
+            disp: 'none'
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
     }
 
-    handleSubmit = e => {
+    handleSubmit = async e => {
         e.preventDefault();
-        alert(this.state.name);
-        alert(this.state.email);
-        alert(this.state.msg);
+        const SPREADSHEET_ID = process.env.REACT_APP_SPREADSHEET_ID;
+        const SHEET_ID = process.env.REACT_APP_SHEET_ID;
+        const CLIENT_EMAIL = process.env.REACT_APP_GOOGLE_CLIENT_EMAIL;
+        const PRIVATE_KEY = process.env.REACT_APP_GOOGLE_SERVICE_PRIVATE_KEY;
+        const doc = new GoogleSpreadsheet(SPREADSHEET_ID);
+        const {name, email, msg} = this.state;
+        const appendSpreadsheet = async (row) => {
+            try {
+              await doc.useServiceAccountAuth({
+                client_email: CLIENT_EMAIL,
+                private_key: PRIVATE_KEY,
+              });
+              // loads document properties and worksheets
+              await doc.loadInfo();
+          
+              const sheet = doc.sheetsById[SHEET_ID];
+              await sheet.addRow(row);
+            } catch (e) {
+              console.error('Error: ', e);
+            }
+          };
+          let date = new Date().toISOString();
+          const newRow = { Name: name, Email: email, Message: msg, TimeStamp: date};
+          await appendSpreadsheet(newRow);
+          this.setState({disp:'block', name: '', email: '', msg: ''});
+          setTimeout(
+            () => this.setState({ disp:'none' }), 
+            7000
+          );
     }
 
     handleInputChange = e => {
@@ -47,10 +75,10 @@ class Contact extends Component {
                             </div>
                         </div>
                     </div>
-                    <div className="row bottomDiv">
+                    <div className="row bottomDiv ">
                         <div className="col-md-3"></div>
                         <div className="col-md-6">
-                            <form autoComplete="on" className="form" id="formContact" name="formContact" role="form" onSubmit={this.handleSubmit}>
+                            <form autoComplete="on" className="form" id="formContact" name="formContact" onSubmit={this.handleSubmit} className="custom-color-blue custom">
                                 <div className="form-group row">
                                     <label htmlFor="name" className="col-2 col-form-label">Name</label>
                                     <div className="col-10">
@@ -64,13 +92,18 @@ class Contact extends Component {
                                     </div>
                                 </div>
                                 <div className="form-group row">
-                                    <label htmlFor="msg" className="col-2 col-form-label">Message</label>
+                                    <label htmlFor="msg" className="custom-color-blue col-2 col-form-label" >Message</label>
                                     <div className="col-10">
                                         <textarea autoComplete="msg" rows="6" className="form-control" name="msg" id="msg" required type="textarea" value={this.state.msg} onChange={this.handleInputChange}/>
                                     </div>
                                 </div>
+                                <div className="form-group row response" style={{display:this.state.disp}}>
+                                    <div className="col-md-12">
+                                        <p className="custom-color-white">Response Submitted...</p>
+                                    </div>
+                                </div>
                                 <div className="form-group">
-                                    <button className="btn btn-primary btn-m float-right" type="submit">Submit</button>
+                                    <button className="btn btn-primary btn-m float-right custom-btn-green" type="submit">Submit</button>
                                 </div>
                             </form>
                         </div>

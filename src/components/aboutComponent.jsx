@@ -20,7 +20,7 @@ function About() {
                         </div>
                     </div>
                 </div>
-                <div className="row custom-pad">
+                <div className="row custom-pad custom">
                     <div className="col-sm-6">
                         <p className="custom-color-blue">Cicero famously orated against his political opponent Lucius Sergius Catilina. Occasionally the first Oration against Catiline is taken for type specimens: Quo usque tandem abutere, Catilina, patientia nostra? Quam diu etiam furor iste tuus nos eludet? (How long, O Catiline, will you abuse our patience? And for how long will that madness of yours mock us?</p>
                         <p className="custom-color-blue">There's lot of hate out there for a text that amounts to little more than garbled words in an old language. The villagers are out there with a vengeance to get that Frankenstein, wielding torches and pitchforks, wanting to tar and feather it at the least, running it out of town in shame.</p>

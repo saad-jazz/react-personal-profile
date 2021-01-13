@@ -6,7 +6,7 @@ function Intro() {
             <div className="container-fluid topDiv">
                 <div className="row">
                     <div className="col-lg-12 custom">
-                        <img src="profile_picture.jpg" className="border border-white rounded-circle" width="240px" height="240px" alt="My Profile Picture"></img>
+                        <img src="profile_picture.jpg" className="border border-white rounded-circle custom" width="240px" height="240px" alt="My Profile"></img>
                     </div>
                     <div className="col-lg-12 custom">
                         <h3 className="custom-color-white">Muhammad Saad Mir</h3>

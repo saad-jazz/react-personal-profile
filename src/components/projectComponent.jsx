@@ -7,7 +7,7 @@ function Project() {
         <section id="my-projects">
             <div className="container-fluid projectDiv">
                 <div className="row">
-                    <div className="col-lg-12 custom-mid">
+                    <div className="col-lg-12 custom-mid custom">
                         <h3 className="custom-color-white">Projects</h3>
                         <div className="custom-star">
                             <div className="custom-line-light"/>
@@ -21,9 +21,9 @@ function Project() {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-lg-3"></div>
-                    <div className="col-lg-6">
-                        <ul className="custom-color-white tester"> 
+                    <div className="col-lg-3 col-md-3 col-xl-4"></div>
+                    <div className="col-lg-6 col-md-6 col-xl-8">
+                        <ul className="custom-color-white tester custom"> 
                             <li><b>Final Year Project: Centralized E-Portal for ICCI <i>(MERN Stack | Material UI).</i></b></li>
                             <li>Artist Mgt. System; http://www.thenxtproduction.com <i>(Wordpress).</i></li>
                             <li>Portfolio for PakTechX;https://www.paktechx.com <i>(Wordpress).</i></li>
