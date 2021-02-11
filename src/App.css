@@ -6,22 +6,24 @@
 .topDiv{
   margin-top: 55px;
   text-align: center;
-  background-color: lightseagreen;
+  background-color: #2c3e50;
 }
 
 .projectDiv{
   margin-top: 25px;
-  background-color: lightseagreen;
+  background-color: #2c3e50;
 }
 
-
+.form-control{
+  background-color: floralwhite !important;
+}
 .aboutDiv{
   margin-top: 25px;
-  background-color: white;
+  background-color: floralwhite;
 }
 .contactDiv{
   margin-top: 25px;
-  background-color: white;
+  background-color: floralwhite;
 }
 .custom-mid{
   text-align: center;
@@ -47,7 +49,7 @@
   width: 50vh;
   position: relative;
   margin: 15px;
-  border: 2px solid white;
+  border: 2px solid floralwhite;
   border-radius: 5px;
 }
 .custom-line-dark{
@@ -61,16 +63,16 @@
   width: 22vh;
   position: relative;
   margin: 15px;
-  border: 2px solid white;
+  border: 2px solid floralwhite;
   border-radius: 5px;
 }
 
 .border {
-  border: 10px solid #fff !important;
+  border: 8px solid floralwhite !important;
 }
 
 .custom-color-white{
-  color: #fff;
+  color: floralwhite;
 }
 
 .custom-color-blue{
@@ -78,14 +80,14 @@
 }
 
 .custom-btn-green{
-  background-color: lightseagreen;
-  border-color: lightseagreen;
+  background-color: #2c3e50;
+  border-color: #2c3e50;
 }
 .custom-btn-green:not(:disabled):not(.disabled):active, .custom-btn-green:not(:disabled):not(.disabled).active, .show > .custom-btn-green.dropdown-toggle, .custom-btn-green:not(:disabled):not(.disabled):hover, .custom-btn-green:not(:disabled):not(.disabled):focus {
-  color: #fff;
-  background-color:darkcyan;
-  border-color: darkcyan;
-  box-shadow: 0 0 0 0.2rem lightseagreen;
+  color: floralwhite;
+  background-color:#343A40;
+  border-color: #343A40;
+  box-shadow: 0 0 0 0.2rem #2c3e50;
 }
 
 .custom-btn-green:disabled,
@@ -93,6 +95,11 @@ button[disabled]{
   border: 1px solid #999999;
   background-color: #cccccc;
   color: #666666;
+}
+
+#root {
+  color: floralwhite;
+  background-color: floralwhite;
 }
 
 .bottomDiv{
@@ -103,7 +110,7 @@ button[disabled]{
 .response{
   border: 1px solid #2c3e50;
   border-radius: 5px;
-  background-color: lightseagreen;
+  background-color: #2c3e50;
   text-align: center;
   height: 30px;
 }
