@@ -10,13 +10,15 @@ class Contact extends Component {
             name: '',
             email: '',
             msg:'',
-            disp: 'none'
+            disp: 'none',
+            btn: false
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
     }
 
     handleSubmit = async e => {
+        this.setState({btn: true});
         e.preventDefault();
         const SPREADSHEET_ID = process.env.REACT_APP_SPREADSHEET_ID;
         const SHEET_ID = process.env.REACT_APP_SHEET_ID;
@@ -39,13 +41,14 @@ class Contact extends Component {
               console.error('Error: ', e);
             }
           };
-          let date = new Date().toISOString();
+          let date = new Date();
+          date.setHours(date.getHours()+5);
           const newRow = { Name: name, Email: email, Message: msg, TimeStamp: date};
           await appendSpreadsheet(newRow);
-          this.setState({disp:'block', name: '', email: '', msg: ''});
+          this.setState({disp:'block', name: '', email: '', msg: '', btn: false});
           setTimeout(
             () => this.setState({ disp:'none' }), 
-            7000
+            5000
           );
     }
 
@@ -78,7 +81,7 @@ class Contact extends Component {
                     <div className="row bottomDiv ">
                         <div className="col-md-3"></div>
                         <div className="col-md-6">
-                            <form autoComplete="on" className="form" id="formContact" name="formContact" onSubmit={this.handleSubmit} className="custom-color-blue custom">
+                            <form autoComplete="on" className="form custom-color-blue custom" id="formContact" name="formContact" onSubmit={this.handleSubmit} >
                                 <div className="form-group row">
                                     <label htmlFor="name" className="col-2 col-form-label">Name</label>
                                     <div className="col-10">
@@ -103,7 +106,7 @@ class Contact extends Component {
                                     </div>
                                 </div>
                                 <div className="form-group">
-                                    <button className="btn btn-primary btn-m float-right custom-btn-green" type="submit">Submit</button>
+                                    <button className="btn btn-primary btn-m float-right custom-btn-green" type="submit" disabled={this.state.btn}>Submit</button>
                                 </div>
                             </form>
                         </div>

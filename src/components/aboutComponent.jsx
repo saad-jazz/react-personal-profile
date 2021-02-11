@@ -1,8 +1,16 @@
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { scroller } from 'react-scroll';
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 function About() {
+    const scrollTo = (e) => {
+        scroller.scrollTo(e.target.href.split('#')[1], {
+            duration: 1000,
+            delay: 0,
+            smooth: "easeInOutQuart",
+          });
+        }
     return(
         <section id="about-me">
             <div className="container-fluid aboutDiv">
@@ -22,9 +30,9 @@ function About() {
                 </div>
                 <div className="row custom-pad custom">
                     <div className="col-sm-6">
-                        <p className="custom-color-blue">Cicero famously orated against his political opponent Lucius Sergius Catilina. Occasionally the first Oration against Catiline is taken for type specimens: Quo usque tandem abutere, Catilina, patientia nostra? Quam diu etiam furor iste tuus nos eludet? (How long, O Catiline, will you abuse our patience? And for how long will that madness of yours mock us?</p>
-                        <p className="custom-color-blue">There's lot of hate out there for a text that amounts to little more than garbled words in an old language. The villagers are out there with a vengeance to get that Frankenstein, wielding torches and pitchforks, wanting to tar and feather it at the least, running it out of town in shame.</p>
-                        <p className="custom-color-blue">Lorem Ipsum actually is usefull in the design stage as it focuses our attention on places where the content is a dynamic block coming from the CMS (unlike static content elements that will always stay the same.) Blocks of Lorem Ipsum with a character count range provide a obvious reminder to check and re-check that the design and the content model match up.</p>
+                        <p className="custom-color-blue">Hi! My name is <b>Muhammad <i>Saad</i> Mir</b>, I am 25 years old <i>Computer Scientist/Software Engineer</i> from <i>Islamabad, Pakistan.</i> I've completed my graduation in <i>Bachelors of Science in <b>Computer Science</b></i> from <i>COMSATS University Islamabad, Wah Campus</i> in January, 2020. Afterwards I've Joined <i>Medical Transcription &amp; Billing Company(MTBC)</i> as Software Engineer(MERN Stack Developer) in February, 2020.</p>
+                        <p className="custom-color-blue">I enjoy being challenged and engaging with projects that require me to work outside my comfort and knowledge set, as continuing to learn new languages and development techniques are important to me. I am highly skilled in designing, testing, and developing software. I have thorough understanding of data structures and algorithms. I am Knowledgeable of back-end development best practices.</p>
+                        <p className="custom-color-blue">My other hobbies includes playing cricket, swimming, watching movies, driving with some music &amp; some E-Gaming that includes MOHAA, Call of Duty 4, GTA V, PUBG and many more. For any queries, please refer to <a onClick={scrollTo} href="#contact-me">Contact</a> Section below.</p>
                     </div>
                     <div className="col-sm-6">
                         <h3 className="custom-color-blue">Highlights</h3>
