@@ -25,9 +25,9 @@ function Project() {
                     <div className="col-md-6">
                         <ul className="custom-color-white tester custom"> 
                             <li><b>Final Year Project: Centralized E-Portal for ICCI <i>(MERN Stack | Material UI).</i></b></li>
-                            <li>Artist Management System; <a className="custom-color-white" target="_blank" href="http://www.thenxtproduction.com">The NXT Production</a> <i>(Wordpress).</i></li>
-                            <li>Portfolio for PakTechX; <a className="custom-color-white" target="_blank" href="https://www.paktechx.com">PakTechX</a> <i>(Wordpress).</i></li>
-                            <li>Real Estate Web Solution; <a className="custom-color-white" target="_blank" href="http://www.afnanassociates.com">Afnan Associates</a> <i>(Wordpress).</i></li> 
+                            <li>Artist Management System; <a className="custom-color-white" target="_blank" rel="noreferrer" href="http://www.thenxtproduction.com">The NXT Production</a> <i>(Wordpress).</i></li>
+                            <li>Portfolio for PakTechX; <a className="custom-color-white" target="_blank" rel="noreferrer" href="https://www.paktechx.com">PakTechX</a> <i>(Wordpress).</i></li>
+                            <li>Real Estate Web Solution; <a className="custom-color-white" target="_blank" rel="noreferrer" href="http://www.afnanassociates.com">Afnan Associates</a> <i>(Wordpress).</i></li> 
                             <li>Doctors Management System <i>(J2EE).</i></li>
                             <li>Customized ERP Solution <i>(J2EE).</i></li>
                             <li>Automatic Number Plate Detection <i>(MATLAB/DIP).</i></li>

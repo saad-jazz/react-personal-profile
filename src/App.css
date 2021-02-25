@@ -114,3 +114,7 @@ button[disabled]{
   text-align: center;
   height: 30px;
 }
+.visitors{
+  float: right;
+  text-align:right
+}

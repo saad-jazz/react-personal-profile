@@ -11,7 +11,8 @@ class Contact extends Component {
             email: '',
             msg:'',
             disp: 'none',
-            btn: false
+            btn: false,
+            visitors: 'Loading...'
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -20,11 +21,11 @@ class Contact extends Component {
     handleSubmit = async e => {
         this.setState({btn: true});
         e.preventDefault();
-        const SPREADSHEET_ID = process.env.REACT_APP_SPREADSHEET_ID;
-        const SHEET_ID = process.env.REACT_APP_SHEET_ID;
-        const CLIENT_EMAIL = process.env.REACT_APP_GOOGLE_CLIENT_EMAIL;
-        const PRIVATE_KEY = process.env.REACT_APP_GOOGLE_SERVICE_PRIVATE_KEY;
-        const doc = new GoogleSpreadsheet(SPREADSHEET_ID);
+        let SPREADSHEET_ID = process.env.REACT_APP_SPREADSHEET_ID;
+        let SHEET_ID = process.env.REACT_APP_SHEET_ID;
+        let CLIENT_EMAIL = process.env.REACT_APP_GOOGLE_CLIENT_EMAIL;
+        let PRIVATE_KEY = process.env.REACT_APP_GOOGLE_SERVICE_PRIVATE_KEY;
+        let doc = new GoogleSpreadsheet(SPREADSHEET_ID);
         const {name, email, msg} = this.state;
         const appendSpreadsheet = async (row) => {
             try {
@@ -58,6 +59,30 @@ class Contact extends Component {
         const name = target.name;
 
         this.setState({ [name]: value });
+    }
+    async componentDidMount() {
+        let SPREADSHEET_ID = process.env.REACT_APP_SPREADSHEET_ID;
+        let SHEET_ID = process.env.REACT_APP_V_SHEET_ID;
+        let CLIENT_EMAIL = process.env.REACT_APP_GOOGLE_CLIENT_EMAIL;
+        let PRIVATE_KEY = process.env.REACT_APP_GOOGLE_SERVICE_PRIVATE_KEY;
+        let doc = new GoogleSpreadsheet(SPREADSHEET_ID);
+        const appendSpreadsheet = async () => {
+            try {
+              await doc.useServiceAccountAuth({
+                client_email: CLIENT_EMAIL,
+                private_key: PRIVATE_KEY,
+              });
+              await doc.loadInfo();
+              const sheet = doc.sheetsById[SHEET_ID];
+              let v = await sheet.getRows();
+              this.setState({visitors: parseInt(v[0].Visitor_Count)+1});
+              v[0].Visitor_Count = this.state.visitors;
+              await v[0].save();
+            } catch (e) {
+              console.error('Error: ', e);
+            }
+          };
+          await appendSpreadsheet();
     }
 
     render(){
@@ -111,6 +136,9 @@ class Contact extends Component {
                             </form>
                         </div>
                         <div className="col-md-3"></div>
+                        <div className="col-md-12">
+                            <p className="visitors custom-color-blue">Visitors: {this.state.visitors}</p>
+                        </div>
                     </div>
                 </div>
             </section>
