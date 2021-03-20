@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { GoogleSpreadsheet } from "google-spreadsheet";
+import Cookies from 'universal-cookie';
+const cookies = new Cookies();
 
 class Contact extends Component {
     constructor(props){
@@ -68,21 +70,28 @@ class Contact extends Component {
         let doc = new GoogleSpreadsheet(SPREADSHEET_ID);
         const appendSpreadsheet = async () => {
             try {
-              await doc.useServiceAccountAuth({
-                client_email: CLIENT_EMAIL,
-                private_key: PRIVATE_KEY,
-              });
-              await doc.loadInfo();
-              const sheet = doc.sheetsById[SHEET_ID];
-              let v = await sheet.getRows();
-              this.setState({visitors: parseInt(v[0].Visitor_Count)+1});
-              v[0].Visitor_Count = this.state.visitors;
-              await v[0].save();
-            } catch (e) {
-              console.error('Error: ', e);
+                await doc.useServiceAccountAuth({
+                    client_email: CLIENT_EMAIL,
+                    private_key: PRIVATE_KEY,
+                });
+                await doc.loadInfo();
+                const sheet = doc.sheetsById[SHEET_ID];
+                let v = await sheet.getRows();
+                if(!cookies.get('visitorFlag')){
+                    this.setState({visitors: parseInt(v[0].Visitor_Count)+1});
+                    v[0].Visitor_Count = this.state.visitors;
+                    await v[0].save();
+                    cookies.set('visitorFlag', true, { path: '/', maxAge: 60*15 });
+                }
+                else{
+                    this.setState({visitors: parseInt(v[0].Visitor_Count)});
+                }
+            } 
+            catch (e) {
+            console.error('Error: ', e);
             }
-          };
-          await appendSpreadsheet();
+        };
+        await appendSpreadsheet();
     }
 
     render(){
