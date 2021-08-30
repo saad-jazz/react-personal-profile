@@ -37,7 +37,11 @@ function About() {
                     <div className="col-sm-6">
                         <h3 className="custom-color-blue">Highlights</h3>
                         <ul className="custom-color-blue">
-                            <li className="custom-color-blue">Working as Software Engineer[MERN Stack] at MTBC From Feb-2020 to Present</li>
+                            <li className="custom-color-blue">Working as Software Engineer[NodeJS] at AKSA-SDS From Aug-2021 to Present</li>
+                                <ul className="custom-color-blue">
+                                    <li className="custom-color-blue">Working as NodeJS Developer on JazzCash application as a vendor to Pakistan Mobile Communication Ltd - Jazz.</li>
+                                </ul>
+                            <li className="custom-color-blue">Worked as Software Engineer[MERN Stack] at CareCloud[MTBC] From Feb-2020 to Aug-2021</li>
                             <ul className="custom-color-blue">
                                 <li className="custom-color-blue">Smooth Transitioning of Carecloud's Monthly data on Realtime.</li>
                                 <li className="custom-color-blue">Porposed and Developed Salestax solution for MTBC &amp; Carecloud using Avalara(Avatax).</li>
